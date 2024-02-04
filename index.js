@@ -1,26 +1,24 @@
-let IP = "106.76.93.57";
+let IP;
 let postOffices;
 
 // getting IP address when document load
 $(document).ready(() => {
-  $.getJSON(
-    "https://ipinfo.io",
-    function (response) {
-      IP = response.ip;
-      console.log(IP);
-      $("#right_container span").html(IP);
-    },
-    "jsonp"
-  );
+  $.getJSON("https://api.ipify.org?format=json", function (data) {
+    IP = data.ip;
+    console.log(IP);
+    $("#right_container span").html(IP);
+  });
 });
 
 const getStartedSection = document.getElementById("get_started_section");
 const mainSection = document.getElementById("main_section");
 
 document.getElementById("get_started_btn").addEventListener("click", () => {
+  //   if (IP) {
   getStartedSection.style.display = "none";
   mainSection.style.display = "block";
   getInfo();
+  //   }
 });
 
 // Getting data using IP address
@@ -111,7 +109,7 @@ async function fetchPostOffices(pincode) {
 function showPostOffices(data) {
   const postOfficeContainer = document.getElementById("post_offices");
   postOfficeContainer.innerHTML = "";
-  if (data.length === 0) {
+  if (!data || data.length === 0) {
     postOfficeContainer.innerHTML = "<h1>No Post Offices available</h1>";
   }
   data.forEach((postOffice) => {
