@@ -10,9 +10,6 @@ $(document).ready(() => {
   });
 });
 
-const getStartedSection = document.getElementById("get_started_section");
-const mainSection = document.getElementById("main_section");
-
 document.getElementById("get_started_btn").addEventListener("click", () => {
   //   if (IP) {
   getStartedSection.style.display = "none";
@@ -20,6 +17,8 @@ document.getElementById("get_started_btn").addEventListener("click", () => {
   getInfo();
   //   }
 });
+const getStartedSection = document.getElementById("get_started_section");
+const mainSection = document.getElementById("main_section");
 
 // Getting data using IP address
 async function getInfo() {
@@ -81,7 +80,7 @@ function showMoreInfo(data, message) {
   });
 
   const moreInfo = document.getElementById("more_info");
-  moreInfo.innerHTML = `
+  moreInfo.innerHTML += `
         <div>
             <p>Time Zone: ${data.timezone}</p>
             <p>Date And Time: ${myCurrentTime}</p>
@@ -109,9 +108,7 @@ async function fetchPostOffices(pincode) {
 function showPostOffices(data) {
   const postOfficeContainer = document.getElementById("post_offices");
   postOfficeContainer.innerHTML = "";
-  if (!data || data.length === 0) {
-    postOfficeContainer.innerHTML = "<h1>No Post Offices available</h1>";
-  }
+
   data.forEach((postOffice) => {
     postOfficeContainer.innerHTML += `
             <div class="post_office">
