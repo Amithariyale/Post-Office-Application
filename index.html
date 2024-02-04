@@ -10,7 +10,8 @@
 
 <body>
 
-    <div id="root_container">
+    <main id="root_container">
+        <!-- Landing page of website -->
         <div id="get_started_section">
             <div id="left_container">
                 <h1>Post Office Application.</h1>
@@ -23,24 +24,16 @@
                 <button id="get_started_btn">Get Started</button>
             </div>
         </div>
+
+        <!-- main page -->
         <div id="main_section">
+
+            <!-- user details container -->
             <div id="user_details">
-                <p>IP Address : 127.0.01</p>
-                <div>
-                    <div>
-                        <p>Lat:</p>
-                        <p>Long:</p>
-                    </div>
-                    <div>
-                        <p>City:</p>
-                        <p>Region</p>
-                    </div>
-                    <div>
-                        <p>Organisation:</p>
-                        <p>Hostname:</p>
-                    </div>
-                </div>
+
             </div>
+
+            <!-- map container for google map -->
             <div id="map_container">
                 <h1>Your Current Location</h1>
             </div>
@@ -48,12 +41,14 @@
             <!-- More info section -->
             <div id="more_info">
                 <h1>More Information About You</h1>
-                
+
             </div>
 
             <!-- Post Office section -->
             <div id="post_office_container">
                 <h1>Post Offices Near You</h1>
+
+                <!-- search section for searching post office  -->
                 <div id="search">
                     <svg width="2vw" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -63,12 +58,14 @@
 
                     <input id="search_input" type="text" placeholder="Search By Name">
                 </div>
+
+                <!-- Post offices container for all post office -->
                 <div id="post_offices">
-                    
+
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     </script>
     <script src="index.js"></script>

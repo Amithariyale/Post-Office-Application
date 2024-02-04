@@ -20,6 +20,7 @@
     width: 100%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 #main_section {
@@ -48,12 +49,14 @@
 }
 
 #left_container img {
+    width: 60%;
     display: block;
     margin: 10% auto;
 }
 
 #right_container {
     flex: 1;
+    min-height: 50%;
     background-color: #575A85;
     display: flex;
     flex-direction: column;
@@ -62,9 +65,7 @@
     gap: 20px;
 }
 
-#right_container h1 {
-    color: #B8BCCC;
-}
+
 
 #get_started_btn {
     padding: 10px;
@@ -110,6 +111,7 @@
     padding: 30px;
 }
 
+#right_container h1,
 #map_container h1,
 #post_office_container h1,
 #more_info h1 {
@@ -166,6 +168,7 @@
 
 #post_offices {
     width: 100%;
+    min-height: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
